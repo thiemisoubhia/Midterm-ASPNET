@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Category>
+
+@{
+    ViewData["Title"] = "Store";
+}
+
+<h1>Shop / Build your Custom PC</h1>
+
+<section class="row card-group">
+    @foreach (var category in Model)
+    {
+        <article class="col-lg-4 mb-3">
+            <div class="card mb-4 text-center h-100">
+                <a asp-action="ByCategory" asp-controller="Store" asp-route-id="@category.CategoryId">
+                    @category.Name
+                </a>
+            </div>
+        </article>
+    }
+</section>
